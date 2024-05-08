@@ -1,0 +1,496 @@
+2024-03-01 08:36:57.468  INFO 15316 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 15316 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:36:57.476  INFO 15316 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:36:58.957  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:36:58.965  INFO 15316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:36:58.965  INFO 15316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:36:59.098  INFO 15316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:36:59.098  INFO 15316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1577 ms
+2024-03-01 08:36:59.732  INFO 15316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:36:59.744  INFO 15316 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.719 seconds (JVM running for 3.146)
+2024-03-01 08:37:12.605  INFO 15316 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 08:37:12.605  INFO 15316 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 08:37:12.606  INFO 15316 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 08:37:12.628  INFO 15316 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:37:20.141  INFO 15316 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:37:26.860  INFO 15316 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:37:32.137  INFO 15316 --- [http-nio-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 08:37:33.243 ERROR 15316 --- [http-nio-8080-exec-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:345) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) [mybatis-3.5.13.jar:3.5.13]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) [mybatis-spring-2.1.1.jar:2.1.1]
+	at com.sun.proxy.$Proxy57.selectOne(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) [mybatis-3.5.13.jar:3.5.13]
+	at com.sun.proxy.$Proxy63.queryByName(Unknown Source) [na:na]
+	at com.bite.blog.service.UserService.queryByName(UserService.java:18) [classes/:na]
+	at com.bite.blog.controller.UserController.login(UserController.java:34) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_192]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_192]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 89 common frames omitted
+
+2024-03-01 08:39:41.420  INFO 20852 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 20852 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:39:41.422  INFO 20852 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:39:43.044  INFO 20852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:39:43.072  INFO 20852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:39:43.072  INFO 20852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:39:43.463  INFO 20852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:39:43.463  INFO 20852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2002 ms
+2024-03-01 08:39:44.124  INFO 20852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:39:44.133  INFO 20852 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 3.117 seconds (JVM running for 3.556)
+2024-03-01 08:39:56.471  INFO 20852 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 08:39:56.471  INFO 20852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 08:39:56.472  INFO 20852 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-01 08:39:56.506  INFO 20852 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 08:39:58.107 ERROR 20852 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLSyntaxErrorException: Unknown database 'your_database'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) [HikariCP-4.0.3.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) [spring-jdbc-5.3.30.jar:5.3.30]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:345) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:333) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75) [mybatis-3.5.13.jar:3.5.13]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425) [mybatis-spring-2.1.1.jar:2.1.1]
+	at com.sun.proxy.$Proxy57.selectOne(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160) [mybatis-spring-2.1.1.jar:2.1.1]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142) [mybatis-3.5.13.jar:3.5.13]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86) [mybatis-3.5.13.jar:3.5.13]
+	at com.sun.proxy.$Proxy63.queryByName(Unknown Source) [na:na]
+	at com.bite.blog.service.UserService.queryByName(UserService.java:18) [classes/:na]
+	at com.bite.blog.controller.UserController.login(UserController.java:34) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_192]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_192]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_192]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_192]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) [tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.30.jar:5.3.30]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) [tomcat-embed-core-9.0.82.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) [tomcat-embed-websocket-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.30.jar:5.3.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.30.jar:5.3.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.82.jar:9.0.82]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2024-03-01 08:42:17.265  INFO 18824 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 18824 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:42:17.267  INFO 18824 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:42:18.748  INFO 18824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:42:18.757  INFO 18824 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:42:18.757  INFO 18824 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:42:18.909  INFO 18824 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:42:18.909  INFO 18824 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1603 ms
+2024-03-01 08:42:19.529  INFO 18824 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:42:19.540  INFO 18824 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.691 seconds (JVM running for 3.149)
+2024-03-01 08:42:58.747  INFO 10740 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 10740 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:42:58.749  INFO 10740 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:43:00.059  INFO 10740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:43:00.067  INFO 10740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:43:00.068  INFO 10740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:43:00.194  INFO 10740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:43:00.195  INFO 10740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1412 ms
+2024-03-01 08:43:00.770  INFO 10740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:43:00.781  INFO 10740 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.387 seconds (JVM running for 2.801)
+2024-03-01 08:44:48.391  INFO 17136 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 17136 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:44:48.394  INFO 17136 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:44:49.757  INFO 17136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:44:49.765  INFO 17136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:44:49.765  INFO 17136 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:44:49.881  INFO 17136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:44:49.881  INFO 17136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1447 ms
+2024-03-01 08:44:50.450  INFO 17136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:44:50.462  INFO 17136 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.466 seconds (JVM running for 2.877)
+2024-03-01 08:46:30.691  INFO 17136 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 08:46:30.691  INFO 17136 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 08:46:30.692  INFO 17136 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 08:46:30.724  INFO 17136 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 08:46:30.843  INFO 17136 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 08:46:51.600  INFO 17136 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:46:51.634  INFO 17136 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3NjExfQ.MNLbRZ7g4LUTmPrqTOMVmnNd-YhiJntFqVnZ3FWHB6w
+2024-03-01 08:46:51.634  INFO 17136 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3NjExfQ.MNLbRZ7g4LUTmPrqTOMVmnNd-YhiJntFqVnZ3FWHB6w
+2024-03-01 08:47:26.431  INFO 17136 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:32.356  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:32.372  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:32.372  INFO 17136 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:34.534  INFO 17136 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:34.558  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:34.558  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:41.967  INFO 17136 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:42.028  INFO 17136 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:42.028  INFO 17136 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:43.573  INFO 17136 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:43.574  INFO 17136 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:43.597  INFO 17136 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:44.941  INFO 17136 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:44.953  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:44.953  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:47.225  INFO 17136 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:47.232  INFO 17136 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:47.232  INFO 17136 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:48.673  INFO 17136 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:48.693  INFO 17136 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:48.693  INFO 17136 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTc2NTJ9.aQmIgJB2de17RukZcWzMWvXY6MOo2IJ_D0uGUngQ0LA
+2024-03-01 08:47:49.493  INFO 17136 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:54.265  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:54.306  INFO 17136 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:47:54.306  INFO 17136 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:47:56.821  INFO 17136 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:47:56.836  INFO 17136 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:47:56.836  INFO 17136 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:47:58.426  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:47:58.427  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:48:47.220  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:48:47.294  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:48:47.303  INFO 17136 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:48:47.303  INFO 17136 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:48:51.229  INFO 17136 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:48:51.229  INFO 17136 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:48:51.229  INFO 17136 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:49:12.723  INFO 17136 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:49:12.729  INFO 17136 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:49:12.729  INFO 17136 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:49:14.024  INFO 17136 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:49:14.036  INFO 17136 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:49:14.036  INFO 17136 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3Njc0fQ.TQbuz0NTyzd287ueAs2WTBKA80xQ4wisx6nW7cYYHto
+2024-03-01 08:49:15.663  INFO 17136 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:49:21.841  INFO 17136 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 08:49:21.848  INFO 17136 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 08:49:51.557  INFO 6448 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 6448 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:49:51.559  INFO 6448 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:49:53.116  INFO 6448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:49:53.124  INFO 6448 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:49:53.124  INFO 6448 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:49:53.260  INFO 6448 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:49:53.260  INFO 6448 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1662 ms
+2024-03-01 08:49:53.883  INFO 6448 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:49:53.892  INFO 6448 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.739 seconds (JVM running for 3.209)
+2024-03-01 08:50:10.841  INFO 6448 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 08:50:10.841  INFO 6448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 08:50:10.843  INFO 6448 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-01 08:50:10.858  INFO 6448 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:16.126  INFO 6448 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 08:50:16.238  INFO 6448 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 08:50:16.805  INFO 6448 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:16.855  INFO 6448 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:16.855  INFO 6448 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:25.174  INFO 6448 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:25.197  INFO 6448 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:25.224  INFO 6448 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:27.299  INFO 6448 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:28.333  INFO 6448 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:28.354  INFO 6448 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:28.354  INFO 6448 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:29.747  INFO 6448 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:30.824  INFO 6448 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:50:30.832  INFO 6448 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:30.832  INFO 6448 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:50:31.897  INFO 6448 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:51:03.377  INFO 6448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 08:51:03.390  INFO 6448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 08:56:50.111  INFO 8160 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 8160 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 08:56:50.113  INFO 8160 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 08:56:51.557  INFO 8160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 08:56:51.566  INFO 8160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 08:56:51.566  INFO 8160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 08:56:51.703  INFO 8160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 08:56:51.704  INFO 8160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1552 ms
+2024-03-01 08:56:52.332  INFO 8160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 08:56:52.341  INFO 8160 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.642 seconds (JVM running for 3.087)
+2024-03-01 08:56:52.552  INFO 8160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 08:56:52.553  INFO 8160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 08:56:52.554  INFO 8160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 08:56:52.708  INFO 8160 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:52.731  INFO 8160 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:56:52.734  INFO 8160 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:53.327  INFO 8160 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 08:56:53.442  INFO 8160 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 08:56:55.286  INFO 8160 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:56:55.296  INFO 8160 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:55.296  INFO 8160 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:56.801  INFO 8160 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:56:56.837  INFO 8160 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:56.837  INFO 8160 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU3ODE2fQ.yA-bxmB6QzeAqsectnuV_9qog_Pql69Bt4rydvMTlT0
+2024-03-01 08:56:58.863  INFO 8160 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:57:09.729  INFO 8160 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:57:09.794  INFO 8160 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTgyMjl9.II9z7GMkdszNCxzNKVcUAJacxD6Jeu3cgcHznj1t4bY
+2024-03-01 08:57:09.794  INFO 8160 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTgyMjl9.II9z7GMkdszNCxzNKVcUAJacxD6Jeu3cgcHznj1t4bY
+2024-03-01 08:57:12.708  INFO 8160 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:57:17.014  INFO 8160 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 08:57:17.052  INFO 8160 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU4MjM2fQ.LsVvcnPKZu-BTezNwrOLeprD0DCmENE9JCNbilTHmD4
+2024-03-01 08:57:17.052  INFO 8160 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU4MjM2fQ.LsVvcnPKZu-BTezNwrOLeprD0DCmENE9JCNbilTHmD4
+2024-03-01 08:57:30.901  INFO 8160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 08:57:30.909  INFO 8160 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 09:00:10.530  INFO 17436 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 17436 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 09:00:10.533  INFO 17436 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 09:00:11.914  INFO 17436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 09:00:11.922  INFO 17436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 09:00:11.922  INFO 17436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 09:00:12.047  INFO 17436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 09:00:12.047  INFO 17436 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1476 ms
+2024-03-01 09:00:12.661  INFO 17436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 09:00:12.672  INFO 17436 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.558 seconds (JVM running for 2.964)
+2024-03-01 09:00:12.720  INFO 17436 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 09:00:12.720  INFO 17436 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 09:00:12.721  INFO 17436 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 09:00:12.899  INFO 17436 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:00:13.777  INFO 17436 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:00:13.800  INFO 17436 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU4MjM2fQ.LsVvcnPKZu-BTezNwrOLeprD0DCmENE9JCNbilTHmD4
+2024-03-01 09:00:13.800  INFO 17436 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjU4MjM2fQ.LsVvcnPKZu-BTezNwrOLeprD0DCmENE9JCNbilTHmD4
+2024-03-01 09:00:14.259  INFO 17436 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 09:00:14.373  INFO 17436 --- [http-nio-8080-exec-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 09:00:16.974  INFO 17436 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:00:22.251  INFO 17436 --- [http-nio-8080-exec-8] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:00:22.309  INFO 17436 --- [http-nio-8080-exec-9] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTg0MjJ9.2XrYkS1GMaNMgtFT_RESoVUOEjLmdkaUMmCUzPZ3dKI
+2024-03-01 09:00:22.309  INFO 17436 --- [http-nio-8080-exec-10] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNTg0MjJ9.2XrYkS1GMaNMgtFT_RESoVUOEjLmdkaUMmCUzPZ3dKI
+2024-03-01 09:00:51.554  INFO 17436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 09:00:51.560  INFO 17436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 09:25:43.418  INFO 28636 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 28636 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 09:25:43.421  INFO 28636 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 09:25:44.928  INFO 28636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 09:25:44.937  INFO 28636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 09:25:44.937  INFO 28636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 09:25:45.066  INFO 28636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 09:25:45.066  INFO 28636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1601 ms
+2024-03-01 09:25:45.640  INFO 28636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 09:25:45.651  INFO 28636 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.656 seconds (JVM running for 3.086)
+2024-03-01 09:28:30.561  INFO 19744 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 19744 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 09:28:30.564  INFO 19744 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 09:28:32.221  INFO 19744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 09:28:32.234  INFO 19744 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 09:28:32.234  INFO 19744 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 09:28:32.390  INFO 19744 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 09:28:32.391  INFO 19744 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1778 ms
+2024-03-01 09:28:33.085  INFO 19744 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 09:28:33.099  INFO 19744 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 3.039 seconds (JVM running for 3.526)
+2024-03-01 09:28:33.264  INFO 19744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 09:28:33.265  INFO 19744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 09:28:33.268  INFO 19744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-03-01 09:28:33.374  INFO 19744 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:28:38.444  INFO 19744 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 09:28:38.572  INFO 19744 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 09:28:39.295  INFO 19744 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:28:39.341  INFO 19744 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNjAxMTh9.xyrSnUFjnG53A7W0l548QJMzQhJ8E-Vpuvj1NtkEdoI
+2024-03-01 09:28:39.341  INFO 19744 --- [http-nio-8080-exec-6] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibGlzaSIsImlkIjoyLCJleHAiOjE3MDkyNjAxMTh9.xyrSnUFjnG53A7W0l548QJMzQhJ8E-Vpuvj1NtkEdoI
+2024-03-01 09:29:19.113  INFO 19744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 09:29:19.120  INFO 19744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 09:38:39.014  INFO 12832 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 12832 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 09:38:39.018  INFO 12832 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 09:38:40.462  INFO 12832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 09:38:40.470  INFO 12832 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 09:38:40.470  INFO 12832 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 09:38:40.603  INFO 12832 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 09:38:40.604  INFO 12832 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1545 ms
+2024-03-01 09:38:41.214  INFO 12832 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 09:38:41.224  INFO 12832 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.644 seconds (JVM running for 3.067)
+2024-03-01 09:38:42.304  INFO 12832 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 09:38:42.304  INFO 12832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 09:38:42.305  INFO 12832 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 09:38:42.343  INFO 12832 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 09:38:42.470  INFO 12832 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 09:38:43.147  INFO 12832 --- [http-nio-8080-exec-2] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 09:38:43.159  INFO 12832 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjYwNzIyfQ.TLNIox2DYNlh5_Xoo5_8_R-q8zNJj-nZEZCo6sQ_Zng
+2024-03-01 09:38:43.159  INFO 12832 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjYwNzIyfQ.TLNIox2DYNlh5_Xoo5_8_R-q8zNJj-nZEZCo6sQ_Zng
+2024-03-01 09:38:51.731  INFO 12832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 09:38:51.737  INFO 12832 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 10:03:59.000  INFO 26764 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 26764 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 10:03:59.005  INFO 26764 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 10:04:00.631  INFO 26764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 10:04:00.638  INFO 26764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 10:04:00.638  INFO 26764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 10:04:00.774  INFO 26764 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 10:04:00.775  INFO 26764 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
+2024-03-01 10:04:01.378  INFO 26764 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 10:04:01.390  INFO 26764 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.944 seconds (JVM running for 3.54)
+2024-03-01 10:04:18.298  INFO 26764 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 10:04:18.298  INFO 26764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 10:04:18.299  INFO 26764 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-01 10:04:18.314  INFO 26764 --- [http-nio-8080-exec-1] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 10:04:23.768  INFO 26764 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 10:04:23.883  INFO 26764 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 10:04:24.540  INFO 26764 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 10:04:24.554  INFO 26764 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjYyMjYzfQ.kQ5h3KR8fl1jZY3n7io9Q63WzJ7gaTk77BDRevVcMKM
+2024-03-01 10:04:24.554  INFO 26764 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjYyMjYzfQ.kQ5h3KR8fl1jZY3n7io9Q63WzJ7gaTk77BDRevVcMKM
+2024-03-01 10:04:36.172  INFO 26764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 10:04:36.180  INFO 26764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-01 12:58:47.633  INFO 24616 --- [main] com.bite.blog.SpringBlogApplication      : Starting SpringBlogApplication using Java 1.8.0_192 on 马尔科686 with PID 24616 (D:\代码gitee\java_code\spring-blog\target\classes started by 李凯轩 in D:\代码gitee\java_code\spring-blog)
+2024-03-01 12:58:47.637  INFO 24616 --- [main] com.bite.blog.SpringBlogApplication      : The following 1 profile is active: "dev"
+2024-03-01 12:58:49.041  INFO 24616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-03-01 12:58:49.050  INFO 24616 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01 12:58:49.050  INFO 24616 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-03-01 12:58:49.176  INFO 24616 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01 12:58:49.176  INFO 24616 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1493 ms
+2024-03-01 12:58:49.705  INFO 24616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-03-01 12:58:49.716  INFO 24616 --- [main] com.bite.blog.SpringBlogApplication      : Started SpringBlogApplication in 2.525 seconds (JVM running for 2.946)
+2024-03-01 12:59:11.345  INFO 24616 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01 12:59:11.346  INFO 24616 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01 12:59:11.346  INFO 24616 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-03-01 12:59:11.460  INFO 24616 --- [http-nio-8080-exec-7] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 12:59:19.178  INFO 24616 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01 12:59:19.294  INFO 24616 --- [http-nio-8080-exec-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01 12:59:19.908  INFO 24616 --- [http-nio-8080-exec-3] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:null
+2024-03-01 12:59:19.947  INFO 24616 --- [http-nio-8080-exec-4] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjcyNzU5fQ.EIaaY8HHpGX3qitrjgBSgB3gVEGcWTW-OWQrmbW-onM
+2024-03-01 12:59:19.956  INFO 24616 --- [http-nio-8080-exec-5] com.bite.blog.config.LoginInterceptor    : 从header中获取token, token:eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiemhhbmdzYW4iLCJpZCI6MSwiZXhwIjoxNzA5MjcyNzU5fQ.EIaaY8HHpGX3qitrjgBSgB3gVEGcWTW-OWQrmbW-onM
+2024-03-01 12:59:27.902  INFO 24616 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01 12:59:27.908  INFO 24616 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
